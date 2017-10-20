@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+    <ImageView
+        android:id="@+id/iv_miaosha"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="现价"
+        android:textColor="#F13737"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/tv_beginprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="原价"
+        android:textColor="#999999"
+        android:layout_gravity="center"
+        android:textSize="13dp"/>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/title2"
+        android:id="@+id/include" />
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include"
+        android:divider="#999999"
+        android:dividerHeight="0.5sp"
+        />
+    <FrameLayout
+        android:id="@+id/fenlei_fragment"
+        android:layout_width="257dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/lv"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/include"></FrameLayout>
+
+
+
+</RelativeLayout>

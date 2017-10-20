@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dell.jingdong.ZhuceActivity"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="1">
+        <ImageView
+            android:id="@+id/iv_fanhui"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/fanhui"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="手机快速注册"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_weight="3" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <EditText
+        android:id="@+id/et_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/zhuce_bg"
+        android:layout_margin="10dp"
+        android:hint="请输入手机号"
+        android:textColorHint="#999999"
+        />
+
+
+    <EditText
+        android:id="@+id/et_psd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/zhuce_bg"
+        android:layout_margin="10dp"
+        android:hint="请输入密码"
+        android:textColor="@color/black"
+        android:textColorHint="#999999"
+        />
+
+    <Button
+        android:id="@+id/bt_zhuce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/login_bg"
+        android:textColor="#B9B9BA"
+        android:text="注册"/>
+
+
+
+
+</LinearLayout>

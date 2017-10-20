@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">JingDong</string>
+    <string name="mobile">账号</string>
+    <string name="psd">密码</string>
+    <string name="title_activity_shop">ShopActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
