@@ -17,6 +17,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.dell.jingdong.LoginActivity2;
 import com.example.dell.jingdong.R;
 import com.example.dell.jingdong.SuccessActivity;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.io.IOException;
 
@@ -89,7 +90,6 @@ public class Fragment5 extends Fragment implements View.OnClickListener, UserVie
                 }
                 else
                 {
-
                     // TODO: 2017/10/12 登录成功后的页面
                     Intent intent=new Intent(getActivity(), SuccessActivity.class);
                     startActivity(intent);
@@ -118,7 +118,10 @@ public class Fragment5 extends Fragment implements View.OnClickListener, UserVie
 
                     if(data.icon!=null)
                     {
-                        Glide.with(getActivity()).load(data.icon).diskCacheStrategy(DiskCacheStrategy.NONE).into(img_denglu);
+
+                        SimpleDraweeView draweeView = (SimpleDraweeView) view.findViewById(R.id.img_denglu);
+                        draweeView.setImageURI(data.icon);
+                        //Glide.with(getActivity()).load(data.icon).diskCacheStrategy(DiskCacheStrategy.NONE).into(img_denglu);
                     }
                     else
                     {

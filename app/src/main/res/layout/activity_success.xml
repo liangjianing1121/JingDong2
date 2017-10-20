@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +9,6 @@
     android:background="#E1E1E3"
     android:orientation="vertical"
     tools:context="com.example.dell.jingdong.SuccessActivity">
-
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,7 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:src="@drawable/fanhui" />
+            android:src="@drawable/fanhui"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -47,12 +49,21 @@
                 android:background="#fff"
                 android:gravity="center_vertical">
 
-                <ImageView
+                <!--<ImageView
                     android:id="@+id/iv_head"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="20dp"
-                    android:src="@drawable/user" />
+                    android:src="@drawable/user" />-->
+
+               <com.facebook.drawee.view.SimpleDraweeView
+                   android:id="@+id/iv_head"
+                   android:layout_width="50dp"
+                   android:layout_height="50dp"
+                   fresco:placeholderImage="@drawable/user"
+                   android:layout_centerVertical="true"
+                   fresco:roundAsCircle="true"
+                   />
 
                 <TextView
                     android:textColor="@color/black"
@@ -496,12 +507,14 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/exit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#fff"
-                android:text="退出登录" />
+                android:text="退出登录"
+                android:textColor="@color/black"/>
         </LinearLayout>
     </ScrollView>
 

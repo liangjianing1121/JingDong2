@@ -37,7 +37,7 @@ public class MyAdapter extends CommonAdapter<bean.XBanner.TuijianBean.ListBean> 
     @Override
     protected void convert(ViewHolder holder, XBanner.TuijianBean.ListBean listBean, final int position) {
 
-        holder.setText(R.id.tv_name,tuijianlist.get(position-3).title);
+        holder.setText(R.id.tv_name,tuijianlist.get(position-4).title);
         holder.setText(R.id.tv_price,"￥"+tuijianlist.get(position-3).price);
         ImageView iv_shop = holder.getView(R.id.iv_shop);
         String images = tuijianlist.get(position-3).images;

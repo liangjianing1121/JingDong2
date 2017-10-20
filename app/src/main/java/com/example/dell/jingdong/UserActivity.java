@@ -79,8 +79,6 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences sp = getSharedPreferences("uid", MODE_PRIVATE);
         int uid = sp.getInt("uid", 0);
         presenter.requestUser(uid);
-
-
     }
 
     private void initView() {
@@ -272,7 +270,6 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
                 }
             });
         }
-
     }
 
     @Override

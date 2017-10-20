@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -48,7 +50,7 @@
                     android:layout_below="@+id/linearLayout"
                     android:orientation="horizontal">
 
-                    <ImageView
+                   <!-- <ImageView
                         android:id="@+id/img_denglu"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
@@ -56,7 +58,19 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/denglu" />
+                        android:src="@drawable/denglu" />-->
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/img_denglu"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        fresco:placeholderImage="@drawable/user"
+                        android:layout_centerVertical="true"
+                        fresco:roundAsCircle="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        />
 
                     <TextView
                         android:id="@+id/tv_user"

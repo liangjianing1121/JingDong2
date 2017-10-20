@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -57,7 +59,6 @@
                 android:id="@+id/iv_head"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-
                 android:layout_alignParentTop="true"
                 android:layout_gravity="right"
                 android:layout_marginBottom="10dp"
@@ -67,6 +68,17 @@
                 android:gravity="center_vertical"
                 android:src="@drawable/user" />
 
+<!--
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_head"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                fresco:placeholderImage="@drawable/user"
+                android:layout_centerVertical="true"
+                fresco:roundAsCircle="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                />-->
             <ImageView
                 android:id="@+id/kkkkkkkkk"
                 android:layout_width="60dp"

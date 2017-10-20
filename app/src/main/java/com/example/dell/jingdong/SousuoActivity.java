@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
 
 public class SousuoActivity extends AppCompatActivity {
 
     private SearchView searchView;
+    private ImageView fanhui;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,5 +43,12 @@ public class SousuoActivity extends AppCompatActivity {
 
     private void initView() {
         searchView = (SearchView) findViewById(R.id.searchview);
+        fanhui = (ImageView) findViewById(R.id.fanhui);
+        fanhui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }

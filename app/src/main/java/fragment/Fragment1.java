@@ -138,7 +138,6 @@ public class Fragment1  extends Fragment implements MainView, View.OnClickListen
      */
     private void startRun() {
         new Thread(new Runnable() {
-
             @Override
             public void run() {
                 // TODO Auto-generated method stub

@@ -1,6 +1,7 @@
 package fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,11 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.dell.jingdong.R;
+import com.example.dell.jingdong.SousuoActivity;
 import com.example.kson.tablayout.widget.HorizontalScollTabhost;
 import com.example.kson.tablayout.widget.bean.CategoryBean;
 
@@ -34,12 +37,13 @@ import view.MainView;
  * Created by DELL on 2017/10/9.
  */
 
-public class Fragment2 extends Fragment implements FenleiView{
+public class Fragment2 extends Fragment implements FenleiView, View.OnClickListener {
 
     private View view;
     private ListView lv;
     //private List<Fenlei.DataBean> data;
     public static int position;
+    private EditText et;
 
     @Nullable
     @Override
@@ -65,6 +69,9 @@ public class Fragment2 extends Fragment implements FenleiView{
        //data=new ArrayList<>();
         lv = view.findViewById(R.id.lv);
         lv.setVerticalScrollBarEnabled(false);
+        et = view.findViewById(R.id.et);
+        et.setFocusable(false);
+        et.setOnClickListener(this);
 
     }
 
@@ -87,7 +94,6 @@ public class Fragment2 extends Fragment implements FenleiView{
                             fenleiRightFragment.getcid(data.get(i).cid);
                             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fenlei_fragment,fenleiRightFragment).commit();
 
-
                             //Toast.makeText(getActivity(), i+""+data.get(i).cid, Toast.LENGTH_SHORT).show();
 
                         }
@@ -100,6 +106,24 @@ public class Fragment2 extends Fragment implements FenleiView{
 
     @Override
     public void onFaliure(Call call, IOException e) {
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId())
+        {
+            case R.id.et:
+                Intent intent=new Intent(getActivity(), SousuoActivity.class);
+                startActivity(intent);
+                break;
+
+
+
+        }
+
+
+
 
     }
 }

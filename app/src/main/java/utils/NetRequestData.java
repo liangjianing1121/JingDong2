@@ -27,7 +27,12 @@ public class NetRequestData {
             builder.add(stringStringEntry.getKey(),stringStringEntry.getValue());
         }
         RequestBody body = builder.build();
-        Request request=new Request.Builder().post(body).url(url).build();
+
+        Request request=new Request.Builder()
+
+                .post(body)
+                .url(url)
+                .build();
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -45,8 +50,6 @@ public class NetRequestData {
                 }
             }
         });
-
-
     }
 
 
@@ -62,25 +65,9 @@ public class NetRequestData {
             Object value = stringObjectEntry.getValue();
             if(value instanceof File)
             {
-
                 File file= (File) value;
-
-
             }
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
     }
 
 */

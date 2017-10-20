@@ -40,4 +40,5 @@ dependencies {
     compile 'com.android.support:design:26.+'
     compile 'com.android.support:support-vector-drawable:26.+'
     testCompile 'junit:junit:4.12'
+    compile 'com.facebook.fresco:fresco:0.12.0'
 }
