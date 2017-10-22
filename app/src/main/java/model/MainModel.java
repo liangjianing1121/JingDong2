@@ -48,16 +48,21 @@ public class MainModel {
     private void parseData(String result) {
         Gson gson=new Gson();
         XBanner xBanner = gson.fromJson(result, XBanner.class);
-        if(xBanner.code.equals("0"))
+        if(xBanner!=null)
         {
+            if("0".equals(xBanner.code))
+            {
 
-            data = xBanner.data;
-            XBanner.MiaoshaBean miaosha = xBanner.miaosha;
-            XBanner.TuijianBean tuijian = xBanner.tuijian;
-            onsuccess.getData(data);
-            onsuccess.getmiaosha(miaosha);
-            onsuccess.gettuijian(tuijian);
+                data = xBanner.data;
+                XBanner.MiaoshaBean miaosha = xBanner.miaosha;
+                XBanner.TuijianBean tuijian = xBanner.tuijian;
+                onsuccess.getData(data);
+                onsuccess.getmiaosha(miaosha);
+                onsuccess.gettuijian(tuijian);
+            }
+
         }
+
     }
 
     public void setOnsuccess(onSuccess onsuccess) {

@@ -55,6 +55,7 @@ public class FenleiAdapter extends  RecyclerView.Adapter<FenleiAdapter.ViewHolde
         return fenleilist.size();
     }
 
+
     class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView tv_name;

@@ -41,19 +41,14 @@ public class NetRequestData {
                     callBck.onFailure(call,e);
                 }
             }
-
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                if(callBck!=null){
-
+                if(response!=null&&response.isSuccessful()){
                     callBck.onSuccess(call,response);
                 }
             }
         });
     }
-
-
-
   /*  public void upload(Map<String,Object> params){
 
         OkHttpClient okHttpClient=new OkHttpClient();

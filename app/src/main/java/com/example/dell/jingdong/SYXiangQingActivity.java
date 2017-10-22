@@ -69,6 +69,7 @@ public class SYXiangQingActivity extends AppCompatActivity implements XiangQingV
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                if(data.images!=null){
 
                     imglist = new ArrayList<>();
                     String images = data.images;
@@ -93,6 +94,8 @@ public class SYXiangQingActivity extends AppCompatActivity implements XiangQingV
                     tv_score.setText(seller.score+"");
                     tv_sellerid.setText(seller.sellerid+"");
                     tv_description.setText(seller.description);
+                }
+
 
                 }
             });

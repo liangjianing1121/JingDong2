@@ -10,6 +10,9 @@
         android:textSize="15sp"
         android:padding="15dp"
         android:layout_gravity="center"
+        android:textColor="@drawable/software_textcolor"
+        android:background="@drawable/software_background"
+        android:enabled="true"
         />
 
 </LinearLayout>

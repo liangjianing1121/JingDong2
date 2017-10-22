@@ -45,6 +45,7 @@ public class Fragment2 extends Fragment implements FenleiView, View.OnClickListe
     public static int position;
     private EditText et;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -62,9 +63,7 @@ public class Fragment2 extends Fragment implements FenleiView, View.OnClickListe
     private void initData() {
         FenleiPresenter presenter=new FenleiPresenter(getActivity(),this);
         presenter.requestfenei();
-
     }
-
     private void initView() {
        //data=new ArrayList<>();
         lv = view.findViewById(R.id.lv);
@@ -84,16 +83,16 @@ public class Fragment2 extends Fragment implements FenleiView, View.OnClickListe
                 public void run() {
                   final ListViewAdapter listViewAdapter=new ListViewAdapter(getActivity(),data);
                     lv.setAdapter(listViewAdapter);
-
                     lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            position=i;
+                            view.setSelected(true);
+                            //position=i;
                             //listViewAdapter.notifyDataSetChanged();
                             FenleiRightFragment fenleiRightFragment = new FenleiRightFragment();
                             fenleiRightFragment.getcid(data.get(i).cid);
-                            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fenlei_fragment,fenleiRightFragment).commit();
-
+                            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fenlei_fragment, fenleiRightFragment).commit();
+                            //listViewAdapter.setselect(i);
                             //Toast.makeText(getActivity(), i+""+data.get(i).cid, Toast.LENGTH_SHORT).show();
 
                         }
@@ -117,8 +116,6 @@ public class Fragment2 extends Fragment implements FenleiView, View.OnClickListe
                 Intent intent=new Intent(getActivity(), SousuoActivity.class);
                 startActivity(intent);
                 break;
-
-
 
         }
 

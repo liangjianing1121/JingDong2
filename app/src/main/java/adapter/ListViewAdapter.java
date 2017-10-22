@@ -2,6 +2,7 @@ package adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -21,7 +22,7 @@ import fragment.Fragment2;
 public class ListViewAdapter extends BaseAdapter {
     private Context context;
     private List<Fenlei.DataBean> fenleilist;
-
+    private int index;
     public ListViewAdapter(Context context, List<Fenlei.DataBean> fenleilist) {
         this.context = context;
         this.fenleilist = fenleilist;
@@ -44,22 +45,25 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        ViewHolder holder=null;
         if(view==null) {
+            holder=new ViewHolder();
             view = View.inflate(context, R.layout.lv_item, null);
-            TextView tv_fenlei = view.findViewById(R.id.tv_fenlei);
-            //tv_fenlei.setSelected(true);
-            tv_fenlei.setText(fenleilist.get(i).name);
-            if(i== Fragment2.position)
-            {
-                tv_fenlei.setTextColor(Color.RED);
-            }
-            else
-            {
-                tv_fenlei.setTextColor(Color.BLACK);
-            }
-
-            notifyDataSetChanged();
+            holder.tv_fenlei =view.findViewById(R.id.tv_fenlei);
+           // holder.tv_fenlei.setSelected(true);
+            view.setTag(holder);
         }
+        else
+        {
+            holder= (ViewHolder) view.getTag();
+        }
+        holder.tv_fenlei.setText(fenleilist.get(i).name);
         return view;
     }
+
+
+   public class ViewHolder{
+       TextView tv_fenlei;
+
+   }
 }

@@ -32,15 +32,20 @@ public class FenleiModel {
 
             @Override
             public void onSuccess(Call call, Response response) {
-                try {
-                    String result = response.body().string();
-                    Gson gson=new Gson();
-                    Fenlei fenlei = gson.fromJson(result, Fenlei.class);
-                    List<Fenlei.DataBean> data = fenlei.data;
-                    onfenlei.getFenlei(data);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if(response!=null&&response.isSuccessful())
+                {
+                    try {
+                        String result = response.body().string();
+                        Gson gson=new Gson();
+                        Fenlei fenlei = gson.fromJson(result, Fenlei.class);
+                        List<Fenlei.DataBean> data = fenlei.data;
+                        onfenlei.getFenlei(data);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
+
             }
         });
     }

@@ -19,6 +19,8 @@ public class Api {
     public static final String ADDCART="http://120.27.23.105/product/addCart";
     public static  final String GETCARTS="http://120.27.23.105/product/getCarts";
     public static  final String UPDATACART="http://120.27.23.105/product/updateCarts";
+    public static  final String DELETE="http://120.27.23.105/product/deleteCart";
+    public static  final String CreateOrder="http://120.27.23.105/product/createOrder";
 
 
 }

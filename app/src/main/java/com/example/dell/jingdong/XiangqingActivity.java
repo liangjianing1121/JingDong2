@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -32,6 +33,7 @@ public class XiangqingActivity extends AppCompatActivity implements View.OnClick
     private ImageView xq_back;
     private Button joinshapcar;
     private ShopCartPresenter presenter;
+    private LinearLayout shapcar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,6 @@ public class XiangqingActivity extends AppCompatActivity implements View.OnClick
         initView();
         initData();
     }
-
     private void initData() {
         presenter = new ShopCartPresenter(this);
     }
@@ -56,11 +57,15 @@ public class XiangqingActivity extends AppCompatActivity implements View.OnClick
         xq_back.setOnClickListener(this);
         joinshapcar.setOnClickListener(this);
 
+        shapcar = (LinearLayout) findViewById(R.id.shapcar);
+
+        shapcar.setOnClickListener(this);
+
         fragmentList = new ArrayList<>();
-        //XiangQingFragment1 fragment1=
+        XiangQingFragment1 fragment1=new XiangQingFragment1();
         XiangQingFragment2 fragment2=new XiangQingFragment2();
         XiangQingFragment3 fragment3=new XiangQingFragment3();
-        fragmentList.add(new XiangQingFragment1());
+        fragmentList.add(fragment1);
         fragmentList.add(fragment2);
         fragmentList.add(fragment3);
         System.out.println(fragmentList.size()+"*********************************");
@@ -81,6 +86,12 @@ public class XiangqingActivity extends AppCompatActivity implements View.OnClick
                 Intent intent = getIntent();
                 int pid = intent.getIntExtra("pid", 0);
                 presenter.requestShopcart(uid,pid);
+                break;
+            case R.id.shapcar:
+
+                Intent intent1=new Intent(XiangqingActivity.this,Main2Activity.class);
+                intent1.putExtra("a",1);
+                startActivity(intent1);
                 break;
         }
     }

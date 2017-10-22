@@ -110,6 +110,7 @@ public class Fragment1  extends Fragment implements MainView, View.OnClickListen
             }
         }
     };
+    private MainPresenter presenter;
 
 
     @Nullable
@@ -183,6 +184,12 @@ public class Fragment1  extends Fragment implements MainView, View.OnClickListen
                     float scale = (float) mDistanceY / toolbarHeight;
                     float alpha = scale * 255;
                     toolbar.setBackgroundColor(Color.argb((int) alpha, 255, 255, 255));
+                    //toolbar.setBackgroundResource(R.color.widowColor);
+                    iv_saoyisao.setImageResource(R.drawable.saoyisao);
+                    tv_soayisao.setTextColor(Color.WHITE);
+                    iv_xiaoxi.setImageResource(R.drawable.xiaoxi);
+                    tv_xiaoxi.setTextColor(Color.WHITE);
+
                 } else {
                     //将标题栏的颜色设置为完全不透明状态
                     toolbar.setBackgroundResource(R.color.widowColor);
@@ -263,17 +270,17 @@ public class Fragment1  extends Fragment implements MainView, View.OnClickListen
         et.setOnClickListener(this);
 
         ( (AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        MainPresenter presenter=new MainPresenter(getContext(),this);
+        presenter = new MainPresenter(getContext(),this);
         presenter.getdata();
 
         //第一个头部布局
         viewpager = LayoutInflater.from(getActivity()).inflate(R.layout.top_viewpager, null);
         banner = viewpager.findViewById(R.id.banner);
 
-        //第三个头部布局
+        //二个头部布局
         tu = LayoutInflater.from(getActivity()).inflate(R.layout.tu, null);
 
-        //第二个头部布局
+        //第三个头部布局
         fenlei = LayoutInflater.from(getActivity()).inflate(R.layout.fenlei, null);
         vp = fenlei.findViewById(R.id.vp);
         //第四个头部布局
@@ -281,8 +288,6 @@ public class Fragment1  extends Fragment implements MainView, View.OnClickListen
         tvMinute = miaosha.findViewById(R.id.tv_minute);
         tvHour = miaosha.findViewById(R.id.tv_hour);
         tvSecond = miaosha.findViewById(R.id.tv_second);
-
-
 
     }
 
@@ -305,8 +310,6 @@ public class Fragment1  extends Fragment implements MainView, View.OnClickListen
                     banner.setPageTransformer(Transformer.Default);
                     // 设置XBanner页面切换的时间，即动画时长
                     banner.setPageChangeDuration(1000);
-
-
                     banner.setData(vplist,null);
 
                     banner.setmAdapter(new XBanner.XBannerAdapter() {
@@ -337,6 +340,7 @@ public class Fragment1  extends Fragment implements MainView, View.OnClickListen
     public void onResume() {
         super.onResume();
         banner.startAutoPlay();
+
     }
     /**
      * 推荐的接口回调   实现推荐的逻辑
@@ -408,8 +412,7 @@ public class Fragment1  extends Fragment implements MainView, View.OnClickListen
                 startActivity(intent);
                 break;
         }
-
-
-
     }
+
+
 }

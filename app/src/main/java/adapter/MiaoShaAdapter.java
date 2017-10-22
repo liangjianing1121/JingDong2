@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.dell.jingdong.R;
 import com.example.dell.jingdong.SYXiangQingActivity;
+import com.example.dell.jingdong.XiangqingActivity;
 
 import java.util.List;
 
@@ -50,9 +51,10 @@ public class MiaoShaAdapter  extends  RecyclerView.Adapter<MiaoShaAdapter.ViewHo
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, SYXiangQingActivity.class);
+               /* Intent intent=new Intent(context, XiangqingActivity.class);
                 intent.putExtra("pid",miaoshaList.get(position).pid+"");
-                context.startActivity(intent);
+                intent.putExtra("b",0);
+                context.startActivity(intent);*/
             }
         });
     }

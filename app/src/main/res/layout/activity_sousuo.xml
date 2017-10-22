@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dell.jingdong.SousuoActivity">
+    tools:context="com.example.dell.jingdong.SousuoActivity"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
@@ -37,6 +38,13 @@
                 android:padding="10dp"/>
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
 
 
 

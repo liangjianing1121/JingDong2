@@ -26,8 +26,9 @@ public class UpdateCartModel {
         params.put("uid",uid+"");
         params.put("sellerid",sellerid+"");
         params.put("pid",pid+"");
-        params.put("selected",selected+"");
         params.put("num",num+"");
+        params.put("selected",selected+"");
+
 
         NetRequestData.Call(Api.UPDATACART, params, new CallBck() {
 

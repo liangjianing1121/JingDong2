@@ -1,5 +1,6 @@
 package com.example.dell.jingdong;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,8 +25,22 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         initView();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new Fragment1()).commit();
-        iv1.setImageResource(R.drawable.shouyehong);
+        Intent intent = getIntent();
+        int a = intent.getIntExtra("a", 0);
+        if(a==1)
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new Fragment4()).commit();
+            iv1.setImageResource(R.drawable.shouyebai);
+            iv2.setImageResource(R.drawable.fenleibai);
+            iv3.setImageResource(R.drawable.faxian);
+            iv4.setImageResource(R.drawable.gouwuchehong);
+            iv5.setImageResource(R.drawable.wodebai);
+        }
+        else
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new Fragment1()).commit();
+            iv1.setImageResource(R.drawable.shouyehong);
+        } 
     }
 
     private void initView() {

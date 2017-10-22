@@ -86,31 +86,36 @@ public class XiangQingFragment1 extends Fragment implements XiangQingView,XBanne
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    System.out.println("%%%%%%%%%%%%%%"+data.title);
+                   // System.out.println("%%%%%%%%%%%%%%"+data.title);
 
-                    imglist = new ArrayList<>();
-                    String images = data.images;
-                    String[] img = images.split("\\|");
-                    for (int i = 0; i <img.length; i++) {
-                        imglist.add(img[i]);
-                    }
+                    if(data!=null){
 
-                    banner.setData(imglist,null);
-                    banner.setPoinstPosition(XBanner.CENTER);
 
-                    banner.setmAdapter(new XBanner.XBannerAdapter() {
-                        @Override
-                        public void loadBanner(XBanner banner, View view, int position) {
-                            Glide.with(getActivity()).load(imglist.get(position)).into((ImageView) view);
+                        imglist = new ArrayList<>();
+                        String images = data.images;
+                        String[] img = images.split("\\|");
+                        for (int i = 0; i <img.length; i++) {
+                            imglist.add(img[i]);
                         }
-                    });
-                    tv_title.setText(data.title);
-                    tv_subhead.setText(data.subhead);
-                    tv_price.setText("￥"+data.price+"");
-                    tv_productNums.setText(seller.productNums+"");
-                    tv_score.setText(seller.score+"");
-                    tv_sellerid.setText(seller.sellerid+"");
-                    tv_description.setText(seller.description);
+
+                        banner.setData(imglist,null);
+                        banner.setPoinstPosition(XBanner.CENTER);
+
+                        banner.setmAdapter(new XBanner.XBannerAdapter() {
+                            @Override
+                            public void loadBanner(XBanner banner, View view, int position) {
+                                Glide.with(getActivity()).load(imglist.get(position)).into((ImageView) view);
+                            }
+                        });
+                        tv_title.setText(data.title);
+                        tv_subhead.setText(data.subhead);
+                        tv_price.setText("￥"+data.price+"");
+                        tv_productNums.setText(seller.productNums+"");
+                        tv_score.setText(seller.score+"");
+                        tv_sellerid.setText(seller.sellerid+"");
+                        tv_description.setText(seller.description);
+
+                    }
 
                 }
             });

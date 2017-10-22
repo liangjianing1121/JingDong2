@@ -74,7 +74,7 @@
             />
         <TextView
             android:textColor="@color/black"
-            android:id="@+id/sumprice"
+            android:id="@+id/tv_sumprice"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="合计:¥3225477.00"

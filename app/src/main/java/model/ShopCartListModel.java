@@ -32,21 +32,25 @@ public class ShopCartListModel {
 
             @Override
             public void onSuccess(Call call, Response response) {
-
                 try {
-                    String result = response.body().string();
-                    Gson gson=new Gson();
-                    ShopCartList shopCartList = gson.fromJson(result, ShopCartList.class);
-                    String code = shopCartList.code;
-                    String msg = shopCartList.msg;
-                    List<ShopCartList.DataBean> data = shopCartList.data;
-                    if("0".equals(code)){
-                        onshopcartlist.onShopCartListSuccess(data);
+                        String result = response.body().string();
+                    if(result.equals("null")){
+                        return;
+                    }else{
+                        Gson gson=new Gson();
+                        ShopCartList shopCartList = gson.fromJson(result, ShopCartList.class);
+                        String code = shopCartList.code;
+                        String msg = shopCartList.msg;
+                        List<ShopCartList.DataBean> data = shopCartList.data;
+                        if("0".equals(code)){
+                            onshopcartlist.onShopCartListSuccess(data);
+                        }
+                        else if("1".equals(code))
+                        {
+                            onshopcartlist.onShopCartListFailure(msg);
+                        }
                     }
-                    else if("1".equals(code))
-                    {
-                        onshopcartlist.onShopCartListFailure(msg);
-                    }
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

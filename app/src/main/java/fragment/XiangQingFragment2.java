@@ -69,7 +69,11 @@ public class XiangQingFragment2 extends Fragment implements XiangQingView {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    wv.loadUrl(data.detailUrl);
+                    if(data!=null)
+                    {
+
+                        wv.loadUrl(data.detailUrl);
+                    }
 
                 }
             });

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -37,6 +38,7 @@ public class Fragment5 extends Fragment implements View.OnClickListener, UserVie
     private int spuid;
     private ImageView img_denglu;
     private UserPresenter presenter;
+    private LinearLayout order;
 
     @Nullable
     @Override
@@ -72,6 +74,7 @@ public class Fragment5 extends Fragment implements View.OnClickListener, UserVie
     private void initView() {
         tv_user = view.findViewById(R.id.tv_user);
         img_denglu = view.findViewById(R.id.img_denglu);
+        order = view.findViewById(R.id.order);
         this.tv_user.setOnClickListener(this);
 
     }

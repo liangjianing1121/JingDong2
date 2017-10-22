@@ -36,7 +36,10 @@ public class FenleiPresenter implements FenleiModel.onFenlei {
 
     @Override
     public void getFenlei(List<Fenlei.DataBean> data) {
-        fenleiView.getFenlei(data);
+        if(data!=null){
+            fenleiView.getFenlei(data);
+        }
+
     }
     @Override
     public void onFailure(Call call, IOException e) {
