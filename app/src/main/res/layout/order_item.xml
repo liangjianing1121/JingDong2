@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 <LinearLayout
 
@@ -26,15 +27,8 @@
             android:textSize="18sp"
             android:textColor="#000"
             />
-        <ImageView
-            android:layout_marginLeft="10dp"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            />
 
     </LinearLayout>
-
-
 </LinearLayout>
     <LinearLayout
         android:padding="10dp"
@@ -48,14 +42,21 @@
             android:layout_height="wrap_content"
             android:text="订单id:"
             />
-        <TextView
+       <!-- <TextView
+            android:id="@+id/orderid"
             android:textColor="@color/black"
-            android:id="@+id/tv_orderid"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="999999999999999"
-            />
+            />-->
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="999999999"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"/>
         <LinearLayout
             android:gravity="right"
             android:layout_width="match_parent"
@@ -79,6 +80,26 @@
                 />
         </LinearLayout>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ll_order_middel"
+
+        >
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订单状态"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"
+
+            />
+
+
+
+    </LinearLayout>
+
 <LinearLayout
     android:layout_below="@+id/ll_order_middel"
     android:padding="5dp"
@@ -104,11 +125,14 @@
         />
 </LinearLayout>
     <ImageView
-        android:visibility="gone"
+        android:visibility="invisible"
         android:layout_alignParentRight="true"
         android:id="@+id/iv_over"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/over"
         />
+
+
+
 </RelativeLayout>

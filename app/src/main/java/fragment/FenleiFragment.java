@@ -35,6 +35,8 @@ public class FenleiFragment extends Fragment implements FenleiView {
     private List<Fenlei2> fenleilist;
     private String icon;
     private String name;
+    private FenleiPresenter presenter;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,9 +51,15 @@ public class FenleiFragment extends Fragment implements FenleiView {
         initData();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        presenter.requestfenei();
+    }
+
     private void initData() {
 
-        FenleiPresenter presenter=new FenleiPresenter(getActivity(),this);
+        presenter = new FenleiPresenter(getActivity(),this);
         presenter.requestfenei();
     }
 

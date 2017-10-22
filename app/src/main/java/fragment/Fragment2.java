@@ -72,6 +72,7 @@ public class Fragment2 extends Fragment implements FenleiView, View.OnClickListe
         et.setFocusable(false);
         et.setOnClickListener(this);
 
+
     }
 
     @Override
@@ -82,6 +83,9 @@ public class Fragment2 extends Fragment implements FenleiView, View.OnClickListe
                 @Override
                 public void run() {
                   final ListViewAdapter listViewAdapter=new ListViewAdapter(getActivity(),data);
+                    FenleiRightFragment fenleiRightFragment = new FenleiRightFragment();
+                    fenleiRightFragment.getcid(data.get(0).cid);
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fenlei_fragment, fenleiRightFragment).commit();
                     lv.setAdapter(listViewAdapter);
                     lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
@@ -119,8 +123,7 @@ public class Fragment2 extends Fragment implements FenleiView, View.OnClickListe
 
         }
 
-
-
-
     }
+
+
 }

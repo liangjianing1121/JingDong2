@@ -21,6 +21,9 @@ public class Api {
     public static  final String UPDATACART="http://120.27.23.105/product/updateCarts";
     public static  final String DELETE="http://120.27.23.105/product/deleteCart";
     public static  final String CreateOrder="http://120.27.23.105/product/createOrder";
+    public static  final String GETORDERR="http://120.27.23.105/product/getOrders";
+    public static  final String QuXiao="http://120.27.23.105/product/updateOrder";
+
 
 
 }

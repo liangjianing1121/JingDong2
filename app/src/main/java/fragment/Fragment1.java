@@ -237,7 +237,7 @@ public class Fragment1  extends Fragment implements MainView, View.OnClickListen
         fragments = new ArrayList<>();
         fragments.add(new FenleiFragment());
         fragments.add(new FenleiFragment2());
-        VpAdapter vpAdapter=new VpAdapter(getFragmentManager(),getActivity(),fragments);
+        VpAdapter vpAdapter=new VpAdapter(getChildFragmentManager(),getActivity(),fragments);
         vp.setAdapter(vpAdapter);
 
         //添加第一个头部

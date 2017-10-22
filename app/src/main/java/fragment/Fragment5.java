@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.dell.jingdong.LoginActivity2;
+import com.example.dell.jingdong.OrderActivity;
 import com.example.dell.jingdong.R;
 import com.example.dell.jingdong.SuccessActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -75,6 +76,7 @@ public class Fragment5 extends Fragment implements View.OnClickListener, UserVie
         tv_user = view.findViewById(R.id.tv_user);
         img_denglu = view.findViewById(R.id.img_denglu);
         order = view.findViewById(R.id.order);
+        order.setOnClickListener(this);
         this.tv_user.setOnClickListener(this);
 
     }
@@ -99,6 +101,10 @@ public class Fragment5 extends Fragment implements View.OnClickListener, UserVie
 
                 }
 
+                break;
+            case R.id.order:
+                Intent intent=new Intent(getActivity(), OrderActivity.class);
+                startActivity(intent);
                 break;
         }
     }
